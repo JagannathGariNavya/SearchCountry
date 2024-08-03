@@ -25,14 +25,14 @@ export const CountryProvider = ({ children }) => {
       const updatedFavorites = [...favorites, country];
       setFavorites(updatedFavorites);
       // Assuming you have an endpoint to save favorites
-      axios.post('http://localhost:5000/favorites', country)
+      axios.post('https://searchcountry.onrender.com/favorites', country)
         .catch(error => console.error('Error saving favorite:', error));
     }
   };
 
   const fetchFavorites = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/favorites');
+      const response = await axios.get('https://searchcountry.onrender.com/favorites');
       setFavorites(response.data);
     } catch (error) {
       console.error('Error fetching favorites:', error);
@@ -41,7 +41,7 @@ export const CountryProvider = ({ children }) => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/history');
+      const response = await axios.get('https://searchcountry.onrender.com/history');
       setHistory(response.data);
     } catch (error) {
       console.error('Error fetching history:', error);
@@ -54,7 +54,7 @@ export const CountryProvider = ({ children }) => {
       const updatedHistory = [...history, { currencyCode, currencyName }];
       setHistory(updatedHistory);
       // Assuming you have an endpoint to save search history
-      axios.post('http://localhost:5000/history', { history: updatedHistory })
+      axios.post('https://searchcountry.onrender.com/history', { history: updatedHistory })
         .catch(error => console.error('Error saving search history:', error));
     }
   };

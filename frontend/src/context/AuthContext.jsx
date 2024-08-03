@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', credentials);
+      const response = await axios.post('https://searchcountry.onrender.com/auth/login', credentials);
       const token = response.data.token;
       localStorage.setItem('token', token);
       const decoded = parseJwt(token); // Decoding JWT token directly
@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (credentials) => {
     try {
-      await axios.post('http://localhost:5000/auth/register', credentials);
+      await axios.post('https://searchcountry.onrender.com/auth/register', credentials);
     } catch (error) {
       console.error('Registration error:', error);
       // Handle error as needed (e.g., show error message)

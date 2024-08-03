@@ -11,7 +11,7 @@ app.use(express.json());
 
 // MongoDB connection
 mongoose
-  .connect("mongodb://localhost:27017/countries", {
+  .connect("mongodb+srv://jnavyan12:SearchCountry@cluster0.krezbvh.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

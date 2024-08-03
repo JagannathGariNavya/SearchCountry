@@ -9,7 +9,7 @@ const CountryDetails = ({ countryCode }) => {
     const fetchCountryDetails = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/countries/${countryCode}`);
+        const response = await axios.get(`https://searchcountry.onrender.com/countries/${countryCode}`);
         setCountry(response.data);
       } catch (error) {
         console.error('Error fetching country details:', error);
